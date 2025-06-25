@@ -1,0 +1,30 @@
+.is-loading {
+	opacity: 0.6;
+	pointer-events: none;
+	overflow: hidden;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 100;
+		left: 50%;
+		top: 0;
+		width: 75px;
+		height: 100%;
+		background: #ffffff;
+		transform: rotate(30deg);
+		filter: blur(34px);
+		will-change: left;
+		animation: loading-glare 1.5s ease-in-out infinite;
+	}
+
+	@keyframes loading-glare {
+		0% {
+			left: calc(0% - 150px);
+		}
+
+		100% {
+			left: calc(100% + 150px);
+		}
+	}
+}
